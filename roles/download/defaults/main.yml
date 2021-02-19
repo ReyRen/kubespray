@@ -81,7 +81,7 @@ kube_router_version: "v1.1.1"
 multus_version: "v3.6"
 ovn4nfv_ovn_image_version: "v1.0.0"
 ovn4nfv_k8s_plugin_image_version: "v1.1.0"
-helm_version: "v3.5.2"
+helm_version: "v3.5.0"
 
 # Get kubernetes major version (i.e. 1.17.4 => 1.17)
 kube_major_version: "{{ kube_version | regex_replace('^v([0-9])+\\.([0-9]+)\\.[0-9]+', 'v\\1.\\2') }}"
@@ -406,7 +406,7 @@ kubectl_binary_checksum: "{{ kubectl_checksums[image_arch][kube_version] }}"
 kubeadm_binary_checksum: "{{ kubeadm_checksums[image_arch][kubeadm_version] }}"
 calicoctl_binary_checksum: "{{ calicoctl_binary_checksums[image_arch][calico_ctl_version] }}"
 crictl_binary_checksum: "{{ crictl_checksums[image_arch][crictl_version] }}"
-helm_archive_checksum: "{{ helm_archive_checksums[image_arch][helm_version] }}"
+helm_archive_checksum: "{{ helm_archive_checksums[image_arch] }}"
 
 # Containers
 # In some cases, we need a way to set --registry-mirror or --insecure-registry for docker,
